@@ -8,4 +8,10 @@
     <string name="calc">Calculate</string>
     <string name="celsius">to Celsius</string>
     <string name="fahrenheit">to Fahrenheit</string>
+    <string name="points01">0-1</string>
+    <string name="points2">2</string>
+    <string name="points3">3</string>
+    <string name="points4">4</string>
+    <string name="points5plus">5+</string>
+    <string name="fields">Fields</string>
 </resources>

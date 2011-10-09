@@ -77,6 +77,14 @@ public class KeepAgricolaScore extends Activity {
 		        LinearLayout.LayoutParams.WRAP_CONTENT);
 			b.setLayoutParams(params);
 			b.setText("Player " + i);
+			b.setOnClickListener(new OnClickListener() 
+			{
+				public void onClick(View v) 
+				{
+					Intent i = new Intent(KeepAgricolaScore.this, PlayerActivity.class);
+		 			startActivity(i);
+				}
+			});
 			ll.addView(b);
 		}
 		layout.addView(ll);
