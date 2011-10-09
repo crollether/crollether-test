@@ -14,4 +14,5 @@
     <string name="points4">4</string>
     <string name="points5plus">5+</string>
     <string name="fields">Fields</string>
+    <color name="AgricolaFieldBrown">#684b09</color>
 </resources>
