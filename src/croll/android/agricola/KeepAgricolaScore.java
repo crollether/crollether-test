@@ -33,14 +33,11 @@ public class KeepAgricolaScore extends Activity {
 
 		button.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				String username = preferences.getString("username", "n/a");
-				String password = preferences.getString("password", "n/a");
 				boolean farmersofthemoor = preferences.getBoolean("farmersofthemoor", false);
 				Integer numberofplayers = preferences.getInt("playernum", 0); 
 				Toast.makeText(
 						KeepAgricolaScore.this,
-						"You entered user: " + username + " password: "
-								+ password + " and farmers of the moor is: " + farmersofthemoor + " num of players: " + numberofplayers, Toast.LENGTH_LONG).show();
+						"You entered: Farmers of the moor: " + farmersofthemoor + " and num of players: " + numberofplayers, Toast.LENGTH_LONG).show();
 
 			}
 		});

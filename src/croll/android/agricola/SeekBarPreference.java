@@ -63,9 +63,10 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
     layout.addView(mSeekBar, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
     if (shouldPersist())
-      mValue = getPersistedInt(mDefault);
+      mValue = getPersistedInt(mDefault)-mMin;
 
     mSeekBar.setMax(mMax);
+    setValueText(mValue);
     mSeekBar.setProgress(mValue);
     return layout;
   }
@@ -76,7 +77,7 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
 	  if (positiveResult)
 	  {
 		  if (shouldPersist())
-			  persistInt(mValue);
+			  persistInt(mValue+mMin);
 		  callChangeListener(new Integer(mValue));
 	  }
   }
@@ -92,16 +93,16 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
   {
     super.onSetInitialValue(restore, defaultValue);
     if (restore) 
-      mValue = shouldPersist() ? getPersistedInt(mDefault) : 0;
+      mValue = shouldPersist() ? getPersistedInt(mDefault)-mMin : 0;
     else 
       mValue = (Integer)defaultValue;
   }
 
-  public void onProgressChanged(SeekBar seek, int value, boolean fromTouch)
+  public void onProgressChanged(SeekBar seek, int value, boolean fromUser)
   {
-    String t = String.valueOf(value);
-    mValueText.setText(mSuffix == null ? t : t.concat(mSuffix));
-    mValue = value;
+	  setValueText(value);
+	    
+	  mValue = value;
   }
   public void onStartTrackingTouch(SeekBar seek) {}
   public void onStopTrackingTouch(SeekBar seek) {}
@@ -115,5 +116,20 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
       mSeekBar.setProgress(progress); 
   }
   public int getProgress() { return mValue; }
+  
+  private void setValueText(int value)
+  {
+	  int displayValue = value + mMin;
+	  String t = String.valueOf(displayValue);
+	  if (mSuffix != null)
+	  {
+	  	t = t.concat(mSuffix);
+	  	if (displayValue > 1)
+	  	{
+	  		t = t.concat("s");
+	  	}
+	  }
+	  mValueText.setText(t);
+  }
 }
 

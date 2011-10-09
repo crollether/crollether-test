@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory>
-        <EditTextPreference android:key="username" android:summary="Please enter your username" android:title="User Name"></EditTextPreference>
-        <EditTextPreference android:key="password" android:summary="Enter your password" android:title="Password"></EditTextPreference>
         <CheckBoxPreference android:summary="Check to use Farmers of the Moor scoring" android:key="farmersofthemoor" android:title="Farmers of the Moor"></CheckBoxPreference>
-        <croll.android.agricola.SeekBarPreference android:title="Number of Players" android:text=" players" android:summary="How many players" android:max="5" android:defaultValue="5" android:key="playernum">
+        <croll.android.agricola.SeekBarPreference android:max="5" android:text=" player" android:key="playernum" android:title="Number of Players" android:defaultValue="5" android:summary="How many players">
         </croll.android.agricola.SeekBarPreference>
     </PreferenceCategory>
     
