@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" android:background="@color/AgricolaGreen">
+    <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout3" android:layout_width="match_parent">
+        <TextView android:layout_width="wrap_content" android:text="@string/fields" android:id="@+id/textView1" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+        <TextView android:layout_height="wrap_content" android:text="TextView" android:id="@+id/fieldPoints" android:gravity="right" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_gravity="right" android:layout_width="match_parent"></TextView>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/linearLayout2" android:layout_width="match_parent" android:orientation="vertical" android:gravity="center_horizontal" android:layout_height="wrap_content">
+        <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:gravity="center_vertical|center_horizontal" android:layout_width="wrap_content" android:padding="2dp" android:background="@color/AgricolaOrange">
+            <Button android:layout_width="50dp" android:layout_height="30dp" android:text="@string/points01" android:background="@color/AgricolaGreen" android:id="@+id/field_points_01" android:onClick="onClickHandler"></Button>
+            <Button android:layout_width="50dp" android:layout_height="30dp" android:text="@string/points2" android:background="@color/AgricolaGreen" android:id="@+id/field_points_2" android:onClick="onClickHandler"></Button>
+            <Button android:layout_width="50dp" android:layout_height="30dp" android:background="@color/AgricolaOrange" android:text="@string/points3" android:id="@+id/field_points_3" android:onClick="onClickHandler"></Button>
+            <Button android:layout_width="50dp" android:layout_height="30dp" android:background="@color/AgricolaOrange" android:text="@string/points4" android:id="@+id/field_points_4" android:onClick="onClickHandler"></Button>
+            <Button android:layout_width="50dp" android:layout_height="30dp" android:background="@color/AgricolaOrange" android:text="@string/points5plus" android:id="@+id/field_points_5" android:onClick="onClickHandler"></Button>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/total_points"></TextView>
+    
+</LinearLayout>
