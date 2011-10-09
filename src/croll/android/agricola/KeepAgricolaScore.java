@@ -72,6 +72,36 @@ public class KeepAgricolaScore extends Activity
 			}
 		});
 		
+		/*LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout1);
+		LinearLayout ll = new LinearLayout(this);
+		ll.setOrientation(LinearLayout.VERTICAL);
+		ll.setGravity(Gravity.CENTER_HORIZONTAL);
+		for (int i = 1; i <= numberofplayers; i++)
+		{
+			Button b = new Button(this);
+		    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+		        LinearLayout.LayoutParams.WRAP_CONTENT, 
+		        LinearLayout.LayoutParams.WRAP_CONTENT);
+			b.setLayoutParams(params);
+			b.setText("Player " + i);
+			b.setOnClickListener(new OnClickListener() 
+			{
+				public void onClick(View v) 
+				{
+					Intent i = new Intent(KeepAgricolaScore.this, PlayerActivity.class);
+		 			startActivity(i);
+				}
+			});
+			ll.addView(b);
+		}
+		layout.addView(ll);*/
+    }
+    
+    @Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Integer numberofplayers = preferences.getInt("playernum", 1);
 		LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout1);
 		LinearLayout ll = new LinearLayout(this);
 		ll.setOrientation(LinearLayout.VERTICAL);
@@ -95,9 +125,9 @@ public class KeepAgricolaScore extends Activity
 			ll.addView(b);
 		}
 		layout.addView(ll);
-    }
-    
-    @Override
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) 
     {
 		MenuInflater inflater = getMenuInflater();
