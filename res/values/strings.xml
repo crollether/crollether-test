@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Leah!</string>
+    <string name="app_name">AgricolaScoreKeeper</string>
+    <color name="AgricolaGreen">#7FA734</color>
+    <color name="AgricolaOrange">#f38337</color>
+    <string name="myClickHandler">myClickHandler</string>
+    <string name="calc">Calculate</string>
+    <string name="celsius">to Celsius</string>
+    <string name="fahrenheit">to Fahrenheit</string>
+</resources>
