@@ -9,12 +9,30 @@
         <TextView android:layout_height="wrap_content" android:text="TextView" android:id="@+id/fieldPoints" android:gravity="right" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_gravity="right" android:layout_width="match_parent"></TextView>
     </LinearLayout>
     <LinearLayout android:id="@+id/linearLayout2" android:layout_width="match_parent" android:orientation="vertical" android:gravity="center_horizontal" android:layout_height="wrap_content">
-        <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:gravity="center_vertical|center_horizontal" android:layout_width="wrap_content" android:padding="2dp" android:background="@color/AgricolaOrange">
-            <Button android:layout_width="50dp" android:layout_height="30dp" android:text="@string/points01" android:background="@color/AgricolaGreen" android:id="@+id/field_points_01" android:onClick="onClickHandler"></Button>
-            <Button android:layout_width="50dp" android:layout_height="30dp" android:text="@string/points2" android:background="@color/AgricolaGreen" android:id="@+id/field_points_2" android:onClick="onClickHandler"></Button>
-            <Button android:layout_width="50dp" android:layout_height="30dp" android:background="@color/AgricolaOrange" android:text="@string/points3" android:id="@+id/field_points_3" android:onClick="onClickHandler"></Button>
-            <Button android:layout_width="50dp" android:layout_height="30dp" android:background="@color/AgricolaOrange" android:text="@string/points4" android:id="@+id/field_points_4" android:onClick="onClickHandler"></Button>
-            <Button android:layout_width="50dp" android:layout_height="30dp" android:background="@color/AgricolaOrange" android:text="@string/points5plus" android:id="@+id/field_points_5" android:onClick="onClickHandler"></Button>
+        <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:gravity="center_vertical|center_horizontal" android:layout_width="wrap_content" android:background="@color/AgricolaGreen">
+            <LinearLayout android:id="@+id/linearLayout4" android:layout_width="wrap_content" android:orientation="vertical" android:padding="2dp" android:layout_height="wrap_content" android:background="@color/AgricolaOrange">
+                <Button android:layout_width="50dp" android:id="@+id/field_points_01" android:text="@string/points01" android:textColor="#FFFFFF" android:background="@drawable/field" android:layout_height="30dp" android:onClick="onClickHandler"></Button>
+            </LinearLayout>
+            <FrameLayout android:id="@+id/frameLayout1" android:layout_height="wrap_content" android:layout_width="5dp">
+            </FrameLayout>
+            <LinearLayout android:padding="2dp" android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:orientation="vertical" android:layout_height="wrap_content" android:background="@color/AgricolaOrange">
+                <Button android:layout_width="50dp" android:id="@+id/field_points_2" android:text="@string/points2" android:textColor="#FFFFFF" android:background="@drawable/field" android:layout_height="30dp" android:onClick="onClickHandler"></Button>
+            </LinearLayout>
+            <FrameLayout android:id="@+id/frameLayout1" android:layout_height="wrap_content" android:layout_width="5dp">
+            </FrameLayout>
+            <LinearLayout android:padding="2dp" android:id="@+id/LinearLayout02" android:layout_width="wrap_content" android:orientation="vertical" android:layout_height="wrap_content" android:background="@color/AgricolaOrange">
+                <Button android:layout_width="50dp" android:id="@+id/field_points_3" android:text="@string/points3" android:textColor="#FFFFFF" android:background="@drawable/field" android:layout_height="30dp" android:onClick="onClickHandler"></Button>
+            </LinearLayout>
+            <FrameLayout android:id="@+id/frameLayout1" android:layout_height="wrap_content" android:layout_width="5dp">
+            </FrameLayout>
+            <LinearLayout android:padding="2dp" android:id="@+id/LinearLayout03" android:layout_width="wrap_content" android:orientation="vertical" android:layout_height="wrap_content" android:background="@color/AgricolaOrange">
+                <Button android:layout_width="50dp" android:id="@+id/field_points_4" android:text="@string/points4" android:textColor="#FFFFFF" android:background="@drawable/field" android:layout_height="30dp" android:onClick="onClickHandler"></Button>
+            </LinearLayout>
+            <FrameLayout android:id="@+id/frameLayout1" android:layout_height="wrap_content" android:layout_width="5dp">
+            </FrameLayout>
+            <LinearLayout android:padding="2dp" android:id="@+id/LinearLayout04" android:layout_width="wrap_content" android:orientation="vertical" android:layout_height="wrap_content" android:background="@color/AgricolaOrange">
+                <Button android:layout_width="50dp" android:id="@+id/field_points_5" android:text="@string/points5plus" android:textColor="#FFFFFF" android:background="@drawable/field" android:layout_height="30dp" android:onClick="onClickHandler"></Button>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="TextView" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/total_points"></TextView>

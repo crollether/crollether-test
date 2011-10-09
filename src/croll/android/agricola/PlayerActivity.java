@@ -2,9 +2,12 @@ package croll.android.agricola;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.LightingColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -29,26 +32,37 @@ public class PlayerActivity extends Activity {
 	}
 
 	public void onClickHandler(View view) {
+		Button button;
  		switch (view.getId()) {
  		case R.id.field_points_01:
  			fieldPoints_ = -1;
  			updateFieldPointText(fieldPoints_);
+ 			button = (Button) findViewById(R.id.field_points_01);
+ 			button.setBackgroundDrawable(R.drawable.field_selected);
  			break;
  		case R.id.field_points_2:
  			fieldPoints_ = 1;
  			updateFieldPointText(fieldPoints_);
+ 			button = (Button) findViewById(R.id.field_points_2);
+ 			button.setBackgroundDrawable(R.drawable.field_selected);
  			break;
  		case R.id.field_points_3:
  			fieldPoints_ = 2;
  			updateFieldPointText(fieldPoints_);
+ 			button = (Button) findViewById(R.id.field_points_3);
+ 			button.setBackgroundDrawable(R.drawable.field_selected);
  			break;
  		case R.id.field_points_4:
  			fieldPoints_ = 3;
  			updateFieldPointText(fieldPoints_);
+ 			button = (Button) findViewById(R.id.field_points_4);
+ 			button.setBackgroundDrawable(R.drawable.field_selected);
  			break;
  		case R.id.field_points_5:
  			fieldPoints_ = 4;
  			updateFieldPointText(fieldPoints_);
+ 			button = (Button) findViewById(R.id.field_points_5);
+ 			button.setBackgroundDrawable(R.drawable.field_selected);
  			break;
  		}
  		updateTotalPoints();
