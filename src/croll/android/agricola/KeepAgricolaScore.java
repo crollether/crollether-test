@@ -19,12 +19,14 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class KeepAgricolaScore extends Activity {
+public class KeepAgricolaScore extends Activity 
+{
 	private EditText text;
 	SharedPreferences preferences;
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) 
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         text = (EditText) findViewById(R.id.editText1);
@@ -34,8 +36,10 @@ public class KeepAgricolaScore extends Activity {
 		preferences = PreferenceManager.getDefaultSharedPreferences(this);
 		Integer numberofplayers = preferences.getInt("playernum", 1);
 
-		button.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
+		button.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View v) 
+			{
 				boolean farmersofthemoor = preferences.getBoolean("farmersofthemoor", false); 
 				Integer numberofplayers = preferences.getInt("playernum", 1);
 				Toast.makeText(
@@ -46,13 +50,16 @@ public class KeepAgricolaScore extends Activity {
 		});
 
 		Button buttonChangePreferences = (Button) findViewById(R.id.button4);
-		buttonChangePreferences.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
+		buttonChangePreferences.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v) 
+			{
 				Editor edit = preferences.edit();
 				String username = preferences.getString("username", "n/a");
 				// We will just revert the current user name and save again
 				StringBuffer buffer = new StringBuffer();
-				for (int i = username.length() - 1; i >= 0; i--) {
+				for (int i = username.length() - 1; i >= 0; i--) 
+				{
 					buffer.append(username.charAt(i));
 				}
 				edit.putString("username", buffer.toString());
@@ -91,15 +98,18 @@ public class KeepAgricolaScore extends Activity {
     }
     
     @Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(Menu menu) 
+    {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu, menu);
 		return true;
 	}
  // This method is called once the menu is selected
  	@Override
- 	public boolean onOptionsItemSelected(MenuItem item) {
- 		switch (item.getItemId()) {
+ 	public boolean onOptionsItemSelected(MenuItem item) 
+ 	{
+ 		switch (item.getItemId()) 
+ 		{
  		// We have only one menu option
  		case R.id.settings:
  			// Launch Preference activity
@@ -117,24 +127,29 @@ public class KeepAgricolaScore extends Activity {
     
     // This method is called at button click because we assigned the name to the
  	// "On Click property" of the button
- 	public void myClickHandler(View view) {
- 		switch (view.getId()) {
+ 	public void myClickHandler(View view) 
+ 	{
+ 		switch (view.getId()) 
+ 		{
  		case R.id.button3:
  			RadioButton celsiusButton = (RadioButton) findViewById(R.id.radioButton1);
  			RadioButton fahrenheitButton = (RadioButton) findViewById(R.id.radioButton2);
- 			if (text.getText().length() == 0) {
+ 			if (text.getText().length() == 0) 
+ 			{
  				Toast.makeText(this, "Please enter a valid number. Foo",
  						Toast.LENGTH_LONG).show();
  				return;
  			}
 
  			float inputValue = Float.parseFloat(text.getText().toString());
- 			if (celsiusButton.isChecked()) {
+ 			if (celsiusButton.isChecked()) 
+ 			{
  				text.setText(String
  						.valueOf(convertFahrenheitToCelsius(inputValue)));
  				celsiusButton.setChecked(false);
  				fahrenheitButton.setChecked(true);
- 			} else {
+ 			} else 
+ 			{
  				text.setText(String
  						.valueOf(convertCelsiusToFahrenheit(inputValue)));
  				fahrenheitButton.setChecked(false);
@@ -145,12 +160,14 @@ public class KeepAgricolaScore extends Activity {
  	}
 
  	// Converts to celsius
- 	private float convertFahrenheitToCelsius(float fahrenheit) {
+ 	private float convertFahrenheitToCelsius(float fahrenheit) 
+ 	{
  		return ((fahrenheit - 32) * 5 / 9);
  	}
 
  	// Converts to fahrenheit
- 	private float convertCelsiusToFahrenheit(float celsius) {
+ 	private float convertCelsiusToFahrenheit(float celsius) 
+ 	{
  		return ((celsius * 9) / 5) + 32;
  	}
 }
