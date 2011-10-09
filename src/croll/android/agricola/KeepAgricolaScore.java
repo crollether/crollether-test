@@ -1,12 +1,13 @@
 package croll.android.agricola;
 
-import android.R.bool;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -30,11 +32,12 @@ public class KeepAgricolaScore extends Activity {
         Button button = (Button) findViewById(R.id.button2);
 		// Initialize preferences
 		preferences = PreferenceManager.getDefaultSharedPreferences(this);
+		Integer numberofplayers = preferences.getInt("playernum", 1);
 
 		button.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				boolean farmersofthemoor = preferences.getBoolean("farmersofthemoor", false);
-				Integer numberofplayers = preferences.getInt("playernum", 0); 
+				boolean farmersofthemoor = preferences.getBoolean("farmersofthemoor", false); 
+				Integer numberofplayers = preferences.getInt("playernum", 1);
 				Toast.makeText(
 						KeepAgricolaScore.this,
 						"You entered: Farmers of the moor: " + farmersofthemoor + " and num of players: " + numberofplayers, Toast.LENGTH_LONG).show();
@@ -61,6 +64,22 @@ public class KeepAgricolaScore extends Activity {
 						Toast.LENGTH_LONG).show();
 			}
 		});
+		
+		LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout1);
+		LinearLayout ll = new LinearLayout(this);
+		ll.setOrientation(LinearLayout.VERTICAL);
+		ll.setGravity(Gravity.CENTER_HORIZONTAL);
+		for (int i = 1; i <= numberofplayers; i++)
+		{
+			Button b = new Button(this);
+		    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+		        LinearLayout.LayoutParams.WRAP_CONTENT, 
+		        LinearLayout.LayoutParams.WRAP_CONTENT);
+			b.setLayoutParams(params);
+			b.setText("Player " + i);
+			ll.addView(b);
+		}
+		layout.addView(ll);
     }
     
     @Override
