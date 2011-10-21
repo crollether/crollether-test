@@ -98,7 +98,8 @@ public class KeepAgricolaScore extends Activity
     }
     
     @Override
-	protected void onResume() {
+	protected void onResume() 
+    {
 		// TODO Auto-generated method stub
 		super.onResume();
 		Integer numberofplayers = preferences.getInt("playernum", 1);
